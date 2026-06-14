@@ -3,17 +3,13 @@
 #include <algorithm>
 #include <iostream>
 
-/**
- * Reverses alphanumeric "words" while preserving the position 
- * of spaces and punctuation.
- */
+
 std::string reverse_words(const std::string &str) {
     std::string result = str;
     size_t length = result.length();
     size_t start = 0;
 
     for (size_t i = 0; i <= length; ++i) {
-        // Trigger reversal when we hit a non-alphanumeric char or string end
         if (i == length || !std::isalnum(static_cast<unsigned char>(result[i]))) {
             if (i > start) {
                 std::reverse(result.begin() + start, result.begin() + i);
@@ -25,7 +21,6 @@ std::string reverse_words(const std::string &str) {
 }
 
 int main() {
-    // Validation
     std::string test_str = "String; 2be reversed...";
     std::string expected = "gnirtS; eb2 desrever...";
     
